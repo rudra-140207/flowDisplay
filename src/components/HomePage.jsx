@@ -7,8 +7,8 @@ const HomePage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const baseUrl = 'https://kiet-display-backend.onrender.com';
   
-  const image1 = 'https://images.pexels.com/photos/443446/pexels-photo-443446.jpeg?cs=srgb&dl=daylight-forest-glossy-443446.jpg&fm=jpg';
-  const image2 = 'https://wallpaperaccess.com/full/453946.jpg';
+  const image1 = 'https://images.app.goo.gl/iDphD5x8WP4EJ7Ms8';
+  const image2 = 'https://images.app.goo.gl/aqZaBD55C4XYygwAA';
 
   const fetchActivities = async () => {
     try {
