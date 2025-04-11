@@ -55,7 +55,7 @@ const HomePage = () => {
     { year: 3, label: "3rd" },
     { year: 4, label: "4th" },
   ];
-  
+
   const yearWiseSlides = years.map(({ year, label }) => ({
     type: "activities",
     year: label,
@@ -116,21 +116,29 @@ const HomePage = () => {
                   : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
               }`}
             >
-              {slides[currentIndex]?.activities.map((activity) => (
-                <div
-                  key={activity._id}
-                  className="bg-gradient-to-r from-green-500 to-blue-500 p-16 rounded-3xl shadow-2xl text-white flex flex-col items-center"
-                >
-                  <h2 className="text-4xl font-semibold text-center">
-                    {activity.name}
-                  </h2>
-                  <p className="text-2xl my-4 text-center">
-                    {formatDisplayDate(activity.startDate)} -{" "}
-                    {formatDisplayDate(activity.endDate)}
-                  </p>
-                  <p className="text-xl text-center">{activity.description}</p>
+              {slides[currentIndex]?.activities.length === 0 ? (
+                <div className="text-3xl text-gray-700 font-bold text-center col-span-full">
+                  No Activity for now
                 </div>
-              ))}
+              ) : (
+                slides[currentIndex]?.activities.map((activity) => (
+                  <div
+                    key={activity._id}
+                    className="bg-gradient-to-r from-green-500 to-blue-500 p-16 rounded-3xl shadow-2xl text-white flex flex-col items-center"
+                  >
+                    <h2 className="text-4xl font-semibold text-center">
+                      {activity.name}
+                    </h2>
+                    <p className="text-2xl my-4 text-center">
+                      {formatDisplayDate(activity.startDate)} -{" "}
+                      {formatDisplayDate(activity.endDate)}
+                    </p>
+                    <p className="text-xl text-center">
+                      {activity.description}
+                    </p>
+                  </div>
+                ))
+              )}
             </div>
           </div>
         </div>
