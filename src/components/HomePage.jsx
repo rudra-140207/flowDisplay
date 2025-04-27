@@ -103,7 +103,7 @@ const HomePage = () => {
         </div>
       ) : (
         <div className="h-screen w-full flex flex-col items-center relative">
-          <h1 className="text-9xl font-extrabold text-blue-800 absolute top-8">
+          <h1 className="text-9xl md:text-5xl font-extrabold text-blue-800 absolute top-8">
             {slides[currentIndex]?.year} Year Activities
           </h1>
           <div className="flex-grow flex justify-center items-center w-full">
@@ -117,7 +117,7 @@ const HomePage = () => {
               }`}
             >
               {slides[currentIndex]?.activities.length === 0 ? (
-                <div className="text-6xl text-gray-700 font-bold text-center col-span-full">
+                <div className="text-6xl md:text-3xl  text-gray-700 font-bold text-center col-span-full">
                   No Activity for now
                 </div>
               ) : (
@@ -126,14 +126,14 @@ const HomePage = () => {
                     key={activity._id}
                     className="bg-gradient-to-r from-green-500 to-blue-500 p-16 rounded-3xl shadow-2xl text-white flex flex-col items-center"
                   >
-                    <h2 className="text-8xl font-semibold text-center">
+                    <h2 className="text-8xl md:text-2xl font-semibold text-center">
                       {activity.name}
                     </h2>
-                    <p className="text-6xl my-4 text-center">
+                    <p className="text-6xl md:text-2xl my-4 font-semibold text-center">
                       {formatDisplayDate(activity.startDate)} -{" "}
                       {formatDisplayDate(activity.endDate)}
                     </p>
-                    <p className="text-6xl text-center">
+                    <p className="text-6xl md:text-2xl font-semibold text-center">
                       {activity.description}
                     </p>
                   </div>
