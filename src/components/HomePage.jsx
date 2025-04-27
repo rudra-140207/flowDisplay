@@ -129,11 +129,11 @@ const HomePage = () => {
                     <h2 className="text-8xl font-semibold text-center">
                       {activity.name}
                     </h2>
-                    <p className="text-6xl my-4 text-center">
+                    <p className="text-6xl font-semibold my-4 text-center">
                       {formatDisplayDate(activity.startDate)} -{" "}
                       {formatDisplayDate(activity.endDate)}
                     </p>
-                    <p className="text-6xl text-center">
+                    <p className="text-6xl font-semibold text-center">
                       {activity.description}
                     </p>
                   </div>
